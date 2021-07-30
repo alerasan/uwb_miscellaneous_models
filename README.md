@@ -2,11 +2,11 @@
 
 this repo is intended to store miscellaneous UWB matlab models
 
-1. PHY-level 802.15.4z-2020
+## PHY-level 802.15.4z-2020
 
 this one is not full, attention mostly paid to navigation-important parts, not informational. Pulse form, correlation with reference pulse and so on.
 
-2.  range bias dependency from received power
+## Range bias dependency from received power
 
 Decawave (Qorvo) documentation mentions some source of systematic error in UWB, which is dependent from receive power level
 Decawave (Qorvo) suggests to use table-based compensation for this systematic error, but doesn't provide any information where this error comes from
