@@ -1,6 +1,8 @@
 close all
 clear all
 clc
+
+addpath('../parts')
 %% 1. Create 802.15.4z-2020 example Pulse
 % sampling frequency is compromise of "big enough to see pulse shape" and
 % "long modeling time". Can be increased/decreased
@@ -19,17 +21,21 @@ ReferenceUWBPulseData = ReferenceUWBPulseData ./ max(ReferenceUWBPulseData);
 
 ReferenceUWBPulse.Data = ReferenceUWBPulseData;
 ReferenceUWBPulse.TimeValues = -10 * 1e-9 : 2 * 10 * 1e-9 /(span * sps + 1) : 10 * 1e-9 - 2 * 10 * 1e-9 /(span * sps + 1);
-figure(2); 
-hold on
-plot( ReferenceUWBPulse.TimeValues , ReferenceUWBPulse.Data ,'-o');
+
+figure; 
+hold on;
+plot(Pulse.TimeValues, Pulse.Data, '-o');
+plot(ReferenceUWBPulse.TimeValues , ReferenceUWBPulse.Data ,'-o');
 grid on;
+legend('UWB Pulse', 'UWB Reference Pulse');
 
 %% 3. corr signal with reference signal
-Xcorr=zeros(length(A),length(Pulse.Data)+length(ReferenceUWBPulse.Data));
-for i=1:length(A)
-Xcorr(i,:) =  abs(xcorr(Pulse.MassiveDiffPulse(i,:), ReferenceUWBPulse.Data));
-end
+Xcorr = abs(xcorr(Pulse.Data, ReferenceUWBPulse.Data));
+
 [~, Xcorr_max_pos] = max(Xcorr);
 Xcorr_time_values = 0 : 1 / DesiredFs : 1 / DesiredFs * (length(Xcorr) - 1);
 Xcorr_time_values = Xcorr_time_values - (Xcorr_max_pos - 1) * (1 / DesiredFs);
 Pulse.XcorrData = Xcorr;
+Pulse.XcorrTimeValues = Xcorr_time_values;
+
+figure; plot(Pulse.XcorrTimeValues, Pulse.XcorrData, '-o'); grid on;
