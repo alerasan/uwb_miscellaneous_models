@@ -43,5 +43,6 @@ Research steps:
 
 
 Authors:
-Semenov Valeriy, PhD student at Moscow Power Engineering Institute
-Matveev Nikita, masters student at Moscow Power Engineering Institute
+
+- Semenov Valeriy, PhD student at Moscow Power Engineering Institute
+- Matveev Nikita, masters student at Moscow Power Engineering Institute
