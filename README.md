@@ -2,11 +2,27 @@
 
 this repo is intended to store miscellaneous UWB matlab models
 
-## PHY-level 802.15.4z-2020
+## /parts
+directory contains mix of UWB PHY-level parts. PHR, Preamble SHR, BPM-BPSK, Hops and some more
+some of them test-covered, some not. 
+
+## /tests
+directory contains mix of UWB-PHY-level parts tests
+working:
+- TestCreate_PHR
+- TestPulseForm
+- TestApply_BPSK_BPM_Hops
+
+seem to be broken:
+- TestCodeSequence (missing part file)
+
+## /PHY-level (802.15.4z-2020)
 
 this one is not full, attention mostly paid to navigation-important parts, not informational. Pulse form, correlation with reference pulse and so on.
+TODO - combine more parts in model
 
-## Range bias dependency from received power
+
+## /RangeBias Range bias dependency from received power
 
 Decawave (Qorvo) documentation mentions some source of systematic error in UWB, which is dependent from receive power level
 Decawave (Qorvo) suggests to use table-based compensation for this systematic error, but doesn't provide any information where this error comes from
@@ -23,3 +39,10 @@ Research steps:
 5. Translate time delta's from time to range (simply multiplying by speed of light)
 6. Plot dependency Bias(ReceivedPower)
 7. Compare results with Decawave's (Qorvo's) pictures
+
+
+
+Authors:
+
+- Semenov Valeriy, PhD student at Moscow Power Engineering Institute (t.me/alerasan)
+- Matveev Nikita, masters student at Moscow Power Engineering Institute
