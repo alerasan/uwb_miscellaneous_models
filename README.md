@@ -39,3 +39,9 @@ Research steps:
 5. Translate time delta's from time to range (simply multiplying by speed of light)
 6. Plot dependency Bias(ReceivedPower)
 7. Compare results with Decawave's (Qorvo's) pictures
+
+
+
+Authors:
+Semenov Valeriy, PhD student at Moscow Power Engineering Institute
+Matveev Nikita, masters student at Moscow Power Engineering Institute
