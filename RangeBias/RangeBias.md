@@ -7,6 +7,6 @@
 
 ![Figure 2](https://github.com/alerasan/uwb_miscellaneous_models/blob/work_Nikita/RangeBias/figure/figure2.png?raw=true)
 
-# Figure 3. Distance versus received  power
+# Figure 3. Range Bias versus received  power
 
 ![Figure 3](https://github.com/alerasan/uwb_miscellaneous_models/blob/work_Nikita/RangeBias/figure/figure3.png?raw=true)
