@@ -16,7 +16,7 @@ figure(1)
 plot(Pulse.TimeValues, ListOfPulses)
 grid on
 xlabel('Time, s')
-ylabel('A, mW')
+ylabel('A,mWt')
 %% 2. create reference signal
 span = 10;
 sps = 30;
@@ -47,8 +47,6 @@ plot(XcorrTimeValues, Xcorr, '-o');
 plot(TresholdCrossTimes, TresholdCrossValues, '.', 'MarkerSize', 15)
 plot([-1 1], [Treshold Treshold])
 xlim([-3e-8 2.5e-8])
-xlabel('Time, s')
-ylabel('A, mW')
 grid on
 
 % 5. translate time diffs to range, simply multiplying by speed of light
@@ -69,11 +67,11 @@ xlabel('A')
 ylabel('R')
 
 figure;
-plot(Adb, RangeBiases*10^2, '-o')
+plot(Adb, RangeBiases, '-o')
 grid on
 grid minor
-xlabel('A, dBm')
-ylabel('R, cm')
+xlabel('A,db')
+ylabel('R, m')
 
 
 
